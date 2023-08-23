@@ -1,0 +1,512 @@
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:2]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+band_lyrics[[i]] <- lyric
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+i <- i + 1
+}
+band_lyrics %>% length()
+band_lyrics[[1]]
+band_lyrics[[2]]
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+band_lyrics[[i]] <- lyric
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+i <- i + 1
+}
+band_lyrics %>% length()
+band_lyrics[[1]]
+band_lyrics[[10]]
+song <- list(1, 2)
+song
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list(title, lyric )
+band_lyrics[i] <- song
+i <- i + 1
+}
+i
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list(title, lyric )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+band_lyrics %>% length()
+band_lyrics[[1]]
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list("title" = title, "lyric" = lyric )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+band_lyrics[[i]]
+band_lyrics[[1]]
+url
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list("title" = title, "lyric" = lyric )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+bandas <- c("chancho en piedra", "los prisioneros", "los tres", "la ley", "juana fe", "joe-vasconcelos", "congreso")
+bandas <- c("chancho en piedra", "los prisioneros", "los tres", "la ley", "juana fe", "joe-vasconcelos", "congreso")
+for (banda in bandas) {
+page <-  read_html(sprintf("https://www.letras.com/%s/", banda ) )
+}
+banda
+sprintf("https://www.letras.com/%s/", banda )
+bandas <- c("chancho-en-piedra", "los-prisioneros", "los-tres", "la-ley", "juana-fe", "joe-vasconcelos", "congreso")
+for (banda in bandas) {
+page <-  read_html(sprintf("https://www.letras.com/%s/", banda ) )
+}
+data <- list()
+data <- list()
+data[["perro"]] <- list(1, 2, 3)
+data
+data <- list()
+data[["perro"]] <- list( list(1, 2, 3) )
+data
+data <- list()
+bandas <- c("chancho-en-piedra", "los-prisioneros", "los-tres", "la-ley", "juana-fe", "joe-vasconcelos", "congreso")
+data <- list()
+data <- list()
+indice <- 1
+for (banda in bandas[1:2]) {
+page <-  read_html(sprintf("https://www.letras.com/%s/", banda ) )
+# Extraer todos los nodos que contienen canciones
+urls_canciones <- page %>%
+html_nodes(".song-name") %>%
+html_attr("href")
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list("title" = title, "lyric" = lyric )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+data[indice] <- band_lyrics
+indice <- indice + 1
+}
+bandas <- c("chancho-en-piedra", "los-prisioneros", "los-tres", "la-ley", "juana-fe", "joe-vasconcelos", "congreso")
+data <- list()
+indice <- 1
+for (banda in bandas[1:2]) {
+page <-  read_html(sprintf("https://www.letras.com/%s/", banda ) )
+# Extraer todos los nodos que contienen canciones
+urls_canciones <- page %>%
+html_nodes(".song-name") %>%
+html_attr("href")
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list("title" = title, "lyric" = lyric )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+data[[indice]] <- band_lyrics
+indice <- indice + 1
+}
+length(data)
+data[[1]]
+data[[1]]
+bandas <- c("chancho-en-piedra", "los-prisioneros", "los-tres", "la-ley", "juana-fe", "joe-vasconcelos", "congreso")
+data <- list()
+indice <- 1
+for (banda in bandas) {
+page <-  read_html(sprintf("https://www.letras.com/%s/", banda ) )
+# Extraer todos los nodos que contienen canciones
+urls_canciones <- page %>%
+html_nodes(".song-name") %>%
+html_attr("href")
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list("title" = title, "lyric" = lyric )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+data[[indice]] <- band_lyrics
+indice <- indice + 1
+}
+data[[3]]
+data[[1]]
+str_detect("ba", "^[:upper:]+$")
+str_detect("Ba", "^[:upper:]+$")
+str_detect("BB", "^[:upper:]+$")
+data[[2]]
+strsplit(data[[3]],split="")
+data[[3]]
+strsplit(data[[3]][[3]]$lyric,split="")
+x <- str_trim(data[[3]][[3]]$lyric)
+x
+strsplit(x, split="")
+l <- strsplit(x, split="")
+for (i in l) {
+print(i)
+}
+str_detect("A", pattern = "[[:upper:]]")
+str_detect("a", pattern = "[[:upper:]]")
+x <- str_trim(data[[3]][[3]]$lyric)
+l <- strsplit(x, split="")
+for (i in 1:length(l)) {
+if (str_detect(l[i+1], pattern = "[[:upper:]]")) {
+print(l[i+1])
+}
+}
+l
+i
+l
+i
+l[i+1]
+l
+l <- strsplit(x, split="")[[1]]
+l
+l[i+1]
+for (i in 1:length(l)) {
+if (str_detect(l[i+1], pattern = "[[:upper:]]")) {
+print(l[i+1])
+}
+}
+length(l)
+x <- str_trim(data[[3]][[3]]$lyric)
+l <- strsplit(x, split="")[[1]]
+for (i in 1:length(l)) {
+if (i < length(l) && str_detect(l[i+1], pattern = "[[:upper:]]")) {
+print(l[i+1])
+}
+}
+x
+new <- c()
+new[[1]] <- "fsdf"
+new
+new <- c()
+new[1] <- "fsdf"
+new
+new[2] <- "fsdf"
+new
+x
+x <- str_trim(data[[3]][[3]]$lyric)
+l <- strsplit(x, split="")[[1]]
+new <- c()
+for (i in 1:length(l)) {
+if (str_detect(l[i], pattern = "[[:upper:]]")) {
+new[i] <- paste0(" ", l[i])
+} else {
+new[i] <- l[i]
+}
+}
+new
+paste(new,collapse=' ')
+paste(new,collapse='')
+fix_string <- function(string) {
+characters_vector <- strsplit(string, split="")[[1]]
+new <- c()
+for (i in 1:length(characters_vector)) {
+if (str_detect(characters_vector[i], pattern = "[[:upper:]]")) {
+new[i] <- paste0(" ", characters_vector[i])
+} else {
+new[i] <- characters_vector[i]
+}
+}
+return(paste(new,collapse=''))
+}
+fix_string <- function(string) {
+string <- str_trim(string)
+characters_vector <- strsplit(string, split="")[[1]]
+new <- c()
+for (i in 1:length(characters_vector)) {
+if (str_detect(characters_vector[i], pattern = "[[:upper:]]")) {
+new[i] <- paste0(" ", characters_vector[i])
+} else {
+new[i] <- characters_vector[i]
+}
+}
+return(paste(new,collapse=''))
+}
+x <- data[[3]][[3]]$lyric
+x
+fix_string <- function(string) {
+string <- str_trim(string)
+characters_vector <- strsplit(string, split="")[[1]]
+new <- c()
+for (i in 1:length(characters_vector)) {
+if (str_detect(characters_vector[i], pattern = "[[:upper:]]")) {
+new[i] <- paste0(" ", characters_vector[i])
+} else {
+new[i] <- characters_vector[i]
+}
+}
+return(paste(new,collapse=''))
+}
+fix_string(x)
+source("code/helpers.R")
+# Crear un listado de bandas chilenas
+bandas <- c("chancho-en-piedra", "los-prisioneros", "los-tres", "la-ley", "juana-fe", "joe-vasconcelos", "congreso")
+data <- list()
+indice <- 1
+for (banda in bandas) {
+page <-  read_html(sprintf("https://www.letras.com/%s/", banda ) )
+# Extraer todos los nodos que contienen canciones
+urls_canciones <- page %>%
+html_nodes(".song-name") %>%
+html_attr("href")
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list("title" = title, "lyric" = lyric )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+data[[indice]] <- band_lyrics
+indice <- indice + 1
+}
+library(tidyverse)
+library(rvest)
+source("code/helpers.R")
+library(tidyverse)
+library(rvest)
+source("code/helpers.R")
+# Crear un listado de bandas chilenas
+bandas <- c("chancho-en-piedra", "los-prisioneros", "los-tres", "la-ley", "juana-fe", "joe-vasconcelos", "congreso")
+data <- list()
+indice <- 1
+for (banda in bandas) {
+page <-  read_html(sprintf("https://www.letras.com/%s/", banda ) )
+# Extraer todos los nodos que contienen canciones
+urls_canciones <- page %>%
+html_nodes(".song-name") %>%
+html_attr("href")
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list("title" = title, "lyric" = lyric )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+data[[indice]] <- band_lyrics
+indice <- indice + 1
+print(banda)
+}
+data %>% length()
+data[[1]] %>% length()
+data[[1]][[1]] %>% length()
+x <- data[[3]][[3]]$lyric
+fix_string(x)
+data[[1]][[1]]$lyric
+data[[1]][[2]]$lyric
+data[[1]][[3]]$lyric
+data[[2]][[3]]$lyric
+map(data, 1 )
+map(data, 2 )
+data[[1]][[2]]$title
+data[[1]]
+View(data)
+data %>% flatten() %>% transpose() %>% pluck("title")
+data %>% flatten() %>% transpose()
+data %>% flatten() %>% transpose() %>% pluck("title")
+data %>% flatten() %>% map("title")
+data %>% map(~flatten(.x) %>% map("title"))
+names(data) <- bandas
+names(data)
+bandas <- c("chancho-en-piedra", "los-prisioneros", "los-tres", "la-ley", "juana-fe", "joe-vasconcelos", "congreso")
+data <- list()
+indice <- 1
+for (banda in bandas) {
+page <-  read_html(sprintf("https://www.letras.com/%s/", banda ) )
+# Extraer todos los nodos que contienen canciones
+urls_canciones <- page %>%
+html_nodes(".song-name") %>%
+html_attr("href")
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones[1:3]) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list("title" = title, "lyric" = lyric, "band" = banda )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+data[[indice]] <- band_lyrics
+indice <- indice + 1
+print(banda)
+}
+data[[1]][[1]]
+data %>% flatten() %>% map("title")
+data %>% flatten() %>% map("name")
+data %>% flatten() %>% map("band")
+data %>% flatten() %>% map("lyric")
+library(tidyverse)
+library(rvest)
+source("code/helpers.R")
+# Crear un listado de bandas chilenas
+bandas <- c("chancho-en-piedra", "los-prisioneros", "los-tres", "la-ley", "juana-fe", "joe-vasconcelos", "congreso")
+data <- list()
+indice <- 1
+for (banda in bandas) {
+page <-  read_html(sprintf("https://www.letras.com/%s/", banda ) )
+# Extraer todos los nodos que contienen canciones
+urls_canciones <- page %>%
+html_nodes(".song-name") %>%
+html_attr("href")
+band_lyrics <- list()
+i <- 1
+for (url in urls_canciones) {
+url_song <-   paste0("https://www.letras.com", url)
+# Extraer el texto de una canción
+song_page <- read_html(url_song)
+lyric <-  song_page %>%
+html_node(".cnt-letra") %>%
+html_text()
+title <-  song_page %>%
+html_node("h1") %>%
+html_text()
+song <- list("title" = title, "lyric" = lyric, "band" = banda )
+band_lyrics[[i]] <- song
+i <- i + 1
+}
+data[[indice]] <- band_lyrics
+indice <- indice + 1
+print(banda)
+}
+data %>% flatten() %>% map("lyric")
+data %>% flatten() %>% map("title")
+data %>% flatten() %>% map("band")
+finañ <- data.frame(title = data %>% flatten() %>% map_chr("title"))
+View(finañ)
+final <- data.frame(title = data %>% flatten() %>% map_chr("title"),
+lyric = data %>% flatten() %>% map("lyric"),
+band = data %>% flatten() %>% map("band")
+)
+View(final)
+final <- data.frame(title = data %>% flatten() %>% map_chr("title"),
+lyric = data %>% flatten() %>% map_chr("lyric"),
+band = data %>% flatten() %>% map_chr("band")
+)
+data %>% flatten() %>% map_chr("lyric")
+data %>% flatten() %>% map_chr("band")
+final <- data.frame(title = data %>% flatten() %>% map_chr("title"),
+#lyric = data %>% flatten() %>% map_chr("lyric"),
+band = data %>% flatten() %>% map_chr("band")
+)
+final <- data.frame(title = data %>% flatten() %>% map_chr("title"),
+lyric = data %>% flatten() %>% map_chr("lyric"),
+band = data %>% flatten() %>% map_chr("band")
+)
+View(final)
+string <- "Tu string con símbolos extraños aquí!@#$%^&*()123"
+cleaned_string <- gsub("[^[:alnum:]]", " ", string)
+cat(cleaned_string)
+strings <- c("usuario1@example.com", "usuario2@example.net", "usuario3@example.org")
+extracted_texts <- gsub("^.*@", "", strings)
+cat(extracted_texts)
+setwd("~/curso_social_sciences/clases/probar_quarto")
