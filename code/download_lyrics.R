@@ -12,7 +12,7 @@ for (banda in bandas) {
   
   # Extraer todos los nodos que contienen canciones
   urls_canciones <- page %>% 
-    html_nodes(".song-name") %>% 
+    html_elements(".songList-table-songName") %>% 
     html_attr("href")
   
   band_lyrics <- list()
@@ -25,7 +25,7 @@ for (banda in bandas) {
     song_page <- read_html(url_song)
     
     lyric <-  song_page %>% 
-      html_node(".cnt-letra") %>% 
+      html_node(".lyric-original") %>% 
       html_text()
     
     title <-  song_page %>% 

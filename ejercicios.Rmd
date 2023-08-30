@@ -1,0 +1,87 @@
+---
+title: "Ejercicios"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = F, message = F)
+```
+
+
+## Doja Cat
+
+```{r}
+
+library(tidyverse)
+library(rvest)
+
+urls <-  read_html("https://www.letras.com/doja-cat/") %>% 
+    html_elements(".songList-table-songName") %>% 
+    html_attr("href")
+
+url_2 <- paste0("https://www.letras.com", urls[2])
+lyric <-read_html(url_2) %>% 
+      html_element(".lyric-original") %>% 
+      html_text()
+
+lyric
+```
+
+## The Clash
+
+Opción gasfitera
+
+```{r}
+
+# url de todas las canciones
+urls <-  read_html("https://www.letras.com/the-clash/") %>% 
+    html_elements(".songList-table-songName") %>% 
+    html_attr("href")
+
+# Raíz de la página
+root <- "https://www.letras.com"
+
+# Listado con las url completas para entrar a cada canción
+full_urls <- paste0(root, urls )
+
+# Iterar sobre las 10 primeras  canciones y agregar las letras en una lista
+lyrics <- list()
+for (url in full_urls[1:10]) {
+  lyric <-read_html(url) %>% 
+      html_element(".lyric-original") %>% 
+      html_text()
+  lyrics <- append(lyrics, lyric)
+}
+
+
+```
+
+Opción ordenada      
+
+```{r}
+
+# Función para obtener urls
+obtener_urls <- function(banda) {
+  band_url <-  sprintf("https://www.letras.com/%s", banda)
+  urls <-  read_html(band_url) %>% 
+      html_elements(".songList-table-songName") %>% 
+      html_attr("href")
+  return(urls)
+}
+
+# Función para extraer letra
+extraer_letra <- function(url) {
+  lyric <-read_html(url) %>% 
+      html_element(".lyric-original") %>% 
+      html_text()
+  return(lyric)  
+}
+
+# Usar map para crear la lista 
+urls <- obtener_urls("the-clash")
+full_urls <- paste0(root, urls )
+lyrics <-  map(full_urls[1:10], extraer_letra)
+
+
+```
+
