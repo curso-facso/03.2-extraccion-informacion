@@ -13,14 +13,47 @@ editor: source
 source("code/helpers.R", encoding = "utf-8")
 ```
 
-
 ## Contenidos de la clase
 
 Web scraping con rvest
 
 Web scraping con rselenium
 
-## Motivación
+Primera parte APIs
+
+## Produciendo datos
+
+::: columns
+::: {.column width="50%"}
+<img src="imagenes/ferrari.jpg" width="400"/>
+:::
+
+::: {.column width="50%"}
+::: fragment
+<img src="imagenes/tractor.jpg" width="500"/>
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Produciendo datos
+
+gratis != fácil
+
+. . .
+
+Las fuentes de datos no tradicionales y/o web muchas veces implican un arduo trabajo de captura y procesamiento
+
+. . .
+
+Debemos entrenarnos para ser buenos productores de información
+
+. . .
+
+### No debemos asustarnos si nos encontramos con tecnologías que no conocemos bien
+
+## Produciendo datos
 
 ::: columns
 ::: {.column width="50%"}
@@ -106,8 +139,6 @@ Para sitios dinámicos usaremos Selenium
 
 Trabajaremos con [rvest](https://rvest.tidyverse.org/) del [tidyverse](https://www.tidyverse.org/)
 
-
-
 ```{r, eval=FALSE}
 install.packages("rvest")
 library(rvest)
@@ -121,6 +152,21 @@ Nos apoyaremos con una extensión para chrome
 
 -   css selector gadget
 -   https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb
+
+## Antes de seguir...
+
+Debemos extraer la información gentilmente
+
+¡Revisar el archivo robots.txt!
+
+[https://www.letras.com/robots.txt](https://www.letras.com/robots.txt)
+
+. . .
+
+Existe un paquete llamado `polite`, para facilitar el trabajo
+
+
+
 
 ## Carguemos nuestro html
 
@@ -200,7 +246,6 @@ url_1 <-  paste0("https://www.letras.com",  urls_canciones[1])
 print(url_1)
 ```
 
-
 `r url_1`
 
 ## Extraer la letra
@@ -218,7 +263,6 @@ print(lyric)
 letra_prisioneros <- lyric
 ```
 
-
 ## Obtengamos el título
 
 ```{r, echo=TRUE}
@@ -228,9 +272,6 @@ title <-read_html(url_1) %>%
 print(title)
 
 ```
-
-
-
 
 ## Ejercicio: Doja Cat
 
@@ -244,14 +285,11 @@ Extraer la segunda letra y segundo título de Doja Cat
 
 ![](imagenes/the_clash.jpeg){fig-align="center" width="40%"}
 
+El *link* inicial para acceder al listado de canciones es:
 
-
-El *link* inicial para acceder al listado de canciones es: 
-
-- https://www.letras.com/the-clash/
+-   https://www.letras.com/the-clash/
 
 Deberías usar un `for` para lograr el ejercicio
-
 
 ## Ejercicio: Doja Cat y The Clash
 
@@ -278,12 +316,6 @@ for (banda in bandas) {
 }
 
 ```
-
-
-
-
-
-
 
 ## Ordenando el código
 
@@ -312,6 +344,7 @@ extraer_letra <- function(url) {
 ```
 
 ## llamado a funciones
+
 ```{r, echo=TRUE, eval=FALSE}
 # Raíz de la página
 root <- "https://www.letras.com"
@@ -325,7 +358,7 @@ lyrics <-  map(full_urls[1:10], extraer_letra)
 
 ## todo junto
 
-Podemos unir todo en una función 
+Podemos unir todo en una función
 
 ```{r, eval=FALSE, echo=TRUE, `code-line-numbers`="|1-10|7,9|13,14" }
 obtener_letras_banda <- function(banda, n_letras = 5) {
@@ -343,14 +376,11 @@ obtener_letras_banda <- function(banda, n_letras = 5) {
 bandas <- c("doja-cat", "the-clash", "los-prisioneros")
 letras <-  map(bandas, obtener_letras_banda)
 ```
-
-
 :::
 
 ## Último paso
 
 ¿Notan algo extraño en la letra de Los Prisioneros?
-
 
 ```{r}
 print(letra_prisioneros)
@@ -364,20 +394,17 @@ fix_string(letra_prisioneros)
 
 Esta función sigue teniendo algunos defectos 😲
 
-
-
-
 # ¿Qué pasa con las páginas dinámicas? {.center background-color="aquamarine"}
 
 ## Páginas dinámicas
 
 Muchas páginas interesantes van cargando conforme interactuamos con ellas
 
-- Supermercados
-- Tiendas del *retail*
-- Portales de empleo
-- Diarios
-- etc.
+-   Supermercados
+-   Tiendas del *retail*
+-   Portales de empleo
+-   Diarios
+-   etc.
 
 . . .
 
@@ -385,7 +412,7 @@ Veamos algunos ejemplos
 
 ## Problemas de investigación
 
-Dinámicas del mercado laboral 
+Dinámicas del mercado laboral
 
 . . .
 
@@ -395,7 +422,6 @@ Monitoreo de precios para IPC
 
 Análisis de prensa escrita
 
-
 ## Selenium
 
 Selenium nos permite automatizar la interacción con los navegadores
@@ -404,12 +430,22 @@ Selenium nos permite automatizar la interacción con los navegadores
 
 Tendremos que usar tecnologías que están fuera de `R`
 
-- Java
 - Selenium
+- Docker
+- Java
 
 . . .
 
 Revisaremos algunos usos más avanzados, para quienes estén interesados
+
+. . .
+
+Solo haremos una demostración. Si quieren profundizar, pueden seguir estas documentaciones
+
+- [Documentación 1](https://docs.ropensci.org/RSelenium/articles/basics.html) 
+- [Documentación 2](https://docs.ropensci.org/RSelenium/articles/docker.html)
+
+
 
 ## Instalación
 
@@ -417,7 +453,106 @@ Revisaremos algunos usos más avanzados, para quienes estén interesados
 install.packages("Rselenium")
 ```
 
+Además, deben tener instalado Selenium en un contenedor o localmente 
 
-## 
+## Seteo inicial
+
+```{r, eval=TRUE, message=FALSE, echo=T, warning=FALSE}
+library(RSelenium)
+remDr <- remoteDriver(
+  remoteServerAddr = "localhost",
+  port = 4445L,
+  browserName = "firefox"
+)
+remDr$open(silent = FALSE)
+```
+
+## Explorar páginas
+
+Página de la BBC
+
+```{r, echo=TRUE}
+remDr$navigate("http://www.bbc.com")
+remDr$getTitle()
+```
+
+. . . 
+
+Ahora nos vamos a emol
+
+```{r, echo=TRUE}
+remDr$navigate("http://emol.com")
+remDr$getTitle()
+
+```
+
+## Buscando elementos
+
+Extraer los elementos "a"
+
+```{r, echo=TRUE}
+a_elements <- remDr$findElements(using = "css", value = "a")
+length(a_elements)
+```
+
+. . . 
+
+Para extraer el texto de uno de los elementos usamos `getElementText`
+
+```{r, echo=TRUE}
+a_elements[[60]]$getElementText()
+```
+
+. . .
+
+## ¿Interactuar con la página?
+
+Primero, entramos a la máquina virtual que contiene el servicio
+
+```{r, eval=F, echo=TRUE}
+
+# Página inicial de la BBC
+remDr$navigate("http://www.bbc.com")
+
+# Encontrar el botón de noticias
+news <- remDr$findElement(using = "css", value = "nav.orbit-header-links:nth-child(5) > ul:nth-child(1) > li:nth-child(2) > a:nth-child(1)")
+
+# Hacer click
+news$clickElement()
+
+# Página inicial de BBC
+remDr$navigate("http://www.bbc.com")
+
+# Encontrar el botón de deportes
+deportes <- remDr$findElement(using = "css", value = "nav.orbit-header-links:nth-child(5) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1) > span:nth-child(1)")
+
+# Clickear en botón de deportes
+deportes$clickElement()
+
+
+
+```
+
+
+
+## Para finalizar
+
+Es conveniente cerrar nuestra conexión
+
+```{r, echo=TRUE}
+remDr$close()
+```
+
+. . .
+
+- El *web scraping* es muy útil para el mundo profesional y académico
+
+- Nos da acceso a fuentes masivas de información (especialmente texto)
+
+- Es un trabajo de artesanía que requiere paciencia y dedicación
+
+. . .
+
+# Métodos computacionales para las ciencias sociales  {.center background-color="aquamarine"}
 
 

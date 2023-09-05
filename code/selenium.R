@@ -13,10 +13,11 @@ remDr <- remoteDriver(
 )
 
 remDr$open(silent = FALSE)
-remDr$navigate("http://www.ine.gob.cl")
+remDr$navigate("http://www.google.com")
 remDr$getTitle()
 
 remDr$navigate("http://www.bbc.com")
+remDr$getTitle()
 
 
 
