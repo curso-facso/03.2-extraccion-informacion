@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="prueba_quarto_files/libs/clipboard/clipboard.min.js"></script>
-<script src="prueba_quarto_files/libs/quarto-html/tabby.min.js"></script>
-<script src="prueba_quarto_files/libs/quarto-html/popper.min.js"></script>
-<script src="prueba_quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="prueba_quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="prueba_quarto_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="prueba_quarto_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="prueba_quarto_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="06-extraccion-informacion_files/libs/clipboard/clipboard.min.js"></script>
+<script src="06-extraccion-informacion_files/libs/quarto-html/tabby.min.js"></script>
+<script src="06-extraccion-informacion_files/libs/quarto-html/popper.min.js"></script>
+<script src="06-extraccion-informacion_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="06-extraccion-informacion_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="06-extraccion-informacion_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="06-extraccion-informacion_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="06-extraccion-informacion_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <title>Untitled</title>
+  <title>Métodos computacionales para las ciencias sociales</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="prueba_quarto_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="prueba_quarto_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="06-extraccion-informacion_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="06-extraccion-informacion_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,12 +28,78 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="prueba_quarto_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="prueba_quarto_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="prueba_quarto_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="prueba_quarto_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="prueba_quarto_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="06-extraccion-informacion_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="06-extraccion-informacion_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="06-extraccion-informacion_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="06-extraccion-informacion_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="06-extraccion-informacion_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -242,6 +308,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -324,34 +391,621 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Untitled</h1>
+  <h1 class="title">Métodos computacionales para las ciencias sociales</h1>
+  <p class="subtitle">Extracción de información con rvest</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="quarto" class="slide level2">
-<h2>Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <a href="https://quarto.org/docs/presentations/" class="uri">https://quarto.org/docs/presentations/</a>.</p>
-<p><img data-src="imagenes/logo_rvest.jpeg" width="100"></p>
-<p>dsfsdf</p>
+<section id="contenidos-de-la-clase" class="slide level2">
+<h2>Contenidos de la clase</h2>
+<p>Web scraping con rvest</p>
+<p>Web scraping con rselenium</p>
+<p>Primera parte APIs</p>
 </section>
-<section id="bullets" class="slide level2">
-<h2>Bullets</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes:</p>
+<section id="produciendo-datos" class="slide level2">
+<h2>Produciendo datos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="imagenes/ferrari.jpg" width="400"></p>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p><img src="imagenes/tractor.jpg" width="500"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="produciendo-datos-1" class="slide level2">
+<h2>Produciendo datos</h2>
+<p>gratis != fácil</p>
+<div class="fragment">
+<p>Las fuentes de datos no tradicionales y/o web muchas veces implican un arduo trabajo de captura y procesamiento</p>
+</div>
+<div class="fragment">
+<p>Debemos entrenarnos para ser buenos productores de información</p>
+</div>
+<div class="fragment">
+<h3 id="no-debemos-asustarnos-si-nos-encontramos-con-tecnologías-que-no-conocemos-bien">No debemos asustarnos si nos encontramos con tecnologías que no conocemos bien</h3>
+</div>
+</section>
+<section id="produciendo-datos-2" class="slide level2">
+<h2>Produciendo datos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="existen-métodos-para-extraer-datos-de-las-personas">Existen métodos para extraer datos de las personas</h4>
+<p><img src="imagenes/encuesta.png" width="400"></p>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<!-- -->
+<h4 id="existen-métodos-para-extraer-datos-de-internet">Existen métodos para extraer datos de internet</h4>
+<p><img data-src="imagenes/ejemplo_css.jpg" width="400"></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<!-- -->
+<h4 id="internet-es-una-gran-fuente-de-información-pero-debemos-aprender-a-extraerla">Internet es una gran fuente de información, pero debemos aprender a extraerla</h4>
+</div>
+</section>
+<section id="las-tecnologías-de-la-web" class="slide level2">
+<h2>Las tecnologías de la web</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagenes/lenguajes_web.png" style="width:50.0%"></p>
+</figure>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>html</strong>: estructura</p>
+<p><strong>css</strong>: apariencia</p>
+<p><strong>javascript</strong>: interacción</p>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<!-- -->
+<h3 id="debemos-entender-lo-básico">Debemos entender lo básico</h3>
+</div>
+</div>
+</div>
+</section>
+<section id="html" class="slide level2">
+<h2>html</h2>
+<p>Nos dice dónde está la información</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagenes/ejemplo_html_prropio.png" style="width:40.0%"></p>
+</figure>
+</div>
+<p><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default">Ejemplo html</a></p>
+</section>
+<section id="css" class="slide level2">
+<h2>css</h2>
+<p>Le da características a la estructura</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagenes/ejemplo_css.jpg" style="width:40.0%"></p>
+</figure>
+</div>
+<p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_default">Ejemplo css</a></p>
+</section>
+<section id="nuestros-datos" class="slide level2">
+<h2>Nuestros datos</h2>
+<p><a href="www.letras.com">www.letras.com</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagenes/pagina_letras.png" style="width:60.0%"></p>
+</figure>
+</div>
+<p>¡Exploremos la página!</p>
+</section>
+<section id="nuestros-datos-1" class="slide level2">
+<h2>Nuestros datos</h2>
+<p>Aprenderemos a extraer letras de canciones</p>
+<div class="fragment">
+<p>Este es el paso inicial para las clases de NLP</p>
+</div>
+<div class="fragment">
+<p>Usaremos una página estática, para facilitar el aprendizaje</p>
+</div>
+<div class="fragment">
+<p>Para sitios dinámicos usaremos Selenium</p>
+</div>
+</section>
+<section id="herramientas" class="slide level2">
+<h2>Herramientas</h2>
+<p>Trabajaremos con <a href="https://rvest.tidyverse.org/">rvest</a> del <a href="https://www.tidyverse.org/">tidyverse</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagenes/logo_rvest.jpeg" style="width:15.0%"></p>
+</figure>
+</div>
+<div class="fragment">
+<p>Nos apoyaremos con una extensión para chrome</p>
 <ul>
-<li>Content authored with markdown</li>
-<li>Output from executable code</li>
+<li>css selector gadget</li>
+<li>https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb</li>
 </ul>
+</div>
 </section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+<section id="antes-de-seguir" class="slide level2">
+<h2>Antes de seguir…</h2>
+<p>Debemos extraer la información gentilmente</p>
+<p>¡Revisar el archivo robots.txt!</p>
+<p><a href="https://www.letras.com/robots.txt">https://www.letras.com/robots.txt</a></p>
+<div class="fragment">
+<p>Existe un paquete llamado <code>polite</code>, para facilitar el trabajo</p>
+</div>
+</section>
+<section id="carguemos-nuestro-html" class="slide level2">
+<h2>Carguemos nuestro html</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(rvest)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>page <span class="ot">&lt;-</span>  <span class="fu">read_html</span>(<span class="st">"https://www.letras.com/los-prisioneros/"</span>) </span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">print</span>(page)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{html_document}
+&lt;html dir="ltr" lang="es"&gt;
+[1] &lt;head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"&gt;\n&lt;meta htt ...
+[2] &lt;body data-locale="es-es" class="es-es "&gt; &lt;script type="text/javascript"&gt; ...</code></pre>
+</div>
+</div>
+</section>
+<section id="obteniendo-elementosnodos" class="slide level2">
+<h2>Obteniendo elementos/nodos</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Seleccionar párrafos</a></li><li><a href="#tabset-1-2">Extraer texto</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>parrafos <span class="ot">&lt;-</span> page <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">html_elements</span>(<span class="st">"p"</span>) </span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">print</span>(parrafos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{xml_nodeset (5)}
+[1] &lt;p style="display: none;"&gt;Quiero recibir notificaciones de artistas desta ...
+[2] &lt;p class="subscriptionWarning-description"&gt;Activa tu suscripción y di adi ...
+[3] &lt;p class="footer-external-label"&gt;Más música en:&lt;/p&gt;
+[4] &lt;p class="footer-external-label"&gt;Asociados:&lt;/p&gt;
+[5] &lt;p class="footer-letrasText"&gt; &lt;span&gt; Música comienza con letras &lt;/span&gt; &lt; ...</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>parrafos <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">html_text</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Quiero recibir notificaciones de artistas destacados y noticias."                                                                                           
+[2] "Activa tu suscripción y di adiós a los anuncios"                                                                                                            
+[3] "Más música en:"                                                                                                                                             
+[4] "Asociados:"                                                                                                                                                 
+[5] "  Música comienza con letras   © 2003 - 2023, 3.3 millones de canciones, 36 millones de visitas en Septiembre   Hecho con amor en Belo Horizonte - Brasil  "</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="busquemos-letras-de-canciones" class="title-slide slide level1 center" data-background-color="aquamarine">
+<h1>Busquemos letras de canciones</h1>
+
+</section>
+<section id="estrategia" class="slide level2">
+<h2>Estrategia</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagenes/los_prisioneros.jpg" style="width:60.0%"></p>
+</figure>
+</div>
+<p>Buscaremos todas las letras de Los Prisioneros</p>
+</section>
+<section id="estrategia-1" class="slide level2">
+<h2>Estrategia</h2>
+<ol type="1">
+<li><p>Entramos a la página de Los Prisioneros</p></li>
+<li><p>Buscamos los links que llevan a cada letra</p></li>
+<li><p>Entramos a cada canción</p></li>
+<li><p>Extraemos la letra de la canción</p></li>
+</ol>
+</section>
+<section id="encontrando-los-links" class="slide level2">
+<h2>Encontrando los links</h2>
+<p>Entramos a la página que nos interesa</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>page <span class="ot">&lt;-</span>  <span class="fu">read_html</span>(<span class="st">"https://www.letras.com/los-prisioneros/"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Extracción de links</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>urls_canciones <span class="ot">&lt;-</span> page <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2"></a>    <span class="fu">html_elements</span>(<span class="st">".songList-table-songName"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">print</span>(urls_canciones[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/los-prisioneros/567100/"      "/los-prisioneros/algo-ilegal/"
+[3] "/los-prisioneros/372889/"      "/los-prisioneros/567101/"     
+[5] "/los-prisioneros/567102/"     </code></pre>
+</div>
+</div>
+<ul>
+<li><strong>.song-name</strong>: clase del elemento que nos interesa</li>
+<li><strong>href</strong>: atributo con la url</li>
+</ul>
+</div>
+</section>
+<section id="reconstruyendo-la-url" class="slide level2">
+<h2>Reconstruyendo la url</h2>
+<p>Ahora debemos unir la raíz de la url con los identificadores que hemos encontrado</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>url_1 <span class="ot">&lt;-</span>  <span class="fu">paste0</span>(<span class="st">"https://www.letras.com"</span>,  urls_canciones[<span class="dv">1</span>]) </span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">print</span>(url_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "https://www.letras.com/los-prisioneros/567100/"</code></pre>
+</div>
+</div>
+<p>https://www.letras.com/los-prisioneros/567100/</p>
+</section>
+<section id="extraer-la-letra" class="slide level2">
+<h2>Extraer la letra</h2>
+<p>Vamos a la nueva url y seleccionamos el elemento que nos interesa</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>lyric <span class="ot">&lt;-</span><span class="fu">read_html</span>(url_1) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2"></a>      <span class="fu">html_element</span>(<span class="st">".lyric-original"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3"></a>      <span class="fu">html_text</span>()</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="fu">print</span>(lyric)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "  Yo soy cocinero trabajo donde PelayoPelayo es mi jefe Pelayo es quien pagaSi hay algo que me asustaY es algo que no me gustaEs que debo aliñar con aceite humanoLos trae en  toneles de alguna extraña parteJamás he probado esoPero los que lo han probado no han vuelto jamás...- Mozo: ¿Puede llamar al cocinero, por favor?.¿El cocinero?- Sí, yo soy- Yo soy de Investigaciones y le llamé porque la comida tiene un sabor ciertamente extraño. Yo creo que es el aceite. Yo lo encarcelaré, amigo, y usted se secará ¿Oyó? Se secaráSoy cocinero trabajo donde PelayoPelayo es mi jefe Pelayo es quien paga- Así que ya oyó mi amigo ¿me entendió? ¿o se lo voy a tener que cantar otra vez?- Oiga, pero...- Nada- Ya pues...- WeeeeeLos trae en toneles de alguna extraña parteJamás he probado eso pero los que lo han probado no han vuelto jamás...  "</code></pre>
+</div>
+</div>
+</section>
+<section id="obtengamos-el-título" class="slide level2">
+<h2>Obtengamos el título</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>title <span class="ot">&lt;-</span><span class="fu">read_html</span>(url_1) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="#cb14-2"></a>      <span class="fu">html_element</span>(<span class="st">"h1"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="#cb14-3"></a>      <span class="fu">html_text</span>()</span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="fu">print</span>(title)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Aceite Humano"</code></pre>
+</div>
+</div>
+</section>
+<section id="ejercicio-doja-cat" class="slide level2">
+<h2>Ejercicio: Doja Cat</h2>
+<p>Extraer la segunda letra y segundo título de Doja Cat</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagenes/doja_cat.jpg" style="width:50.0%"></p>
+</figure>
+</div>
+</section>
+<section id="ejercicio-the-clash" class="slide level2">
+<h2>Ejercicio: The Clash</h2>
+<p><strong>Queremos extraer las 10 primeras letras de los Clash y guardarlas en una lista.</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imagenes/the_clash.jpeg" style="width:40.0%"></p>
+</figure>
+</div>
+<p>El <em>link</em> inicial para acceder al listado de canciones es:</p>
+<ul>
+<li>https://www.letras.com/the-clash/</li>
+</ul>
+<p>Deberías usar un <code>for</code> para lograr el ejercicio</p>
+</section>
+<section id="ejercicio-doja-cat-y-the-clash" class="slide level2">
+<h2>Ejercicio: Doja Cat y The Clash</h2>
+<p>Queremos un código que permita extraer las letras de un listado de bandas</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>bandas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"doja-cat"</span>, <span class="st">"the-clash"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a>letras <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># Para cada banda</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="cf">for</span> (banda <span class="cf">in</span> bandas) {</span>
+<span id="cb16-6"><a href="#cb16-6"></a>  </span>
+<span id="cb16-7"><a href="#cb16-7"></a>  <span class="co"># Para cada letra de la banda   </span></span>
+<span id="cb16-8"><a href="#cb16-8"></a>  <span class="cf">for</span> (letra <span class="cf">in</span> letras_banda) {</span>
+<span id="cb16-9"><a href="#cb16-9"></a>    <span class="co"># extraer letra de la banda    </span></span>
+<span id="cb16-10"><a href="#cb16-10"></a>    </span>
+<span id="cb16-11"><a href="#cb16-11"></a>    <span class="co"># agregar letra a la lista general de letras</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a>    letras <span class="ot">=</span> <span class="fu">append</span>(letras, letras_banda)</span>
+<span id="cb16-13"><a href="#cb16-13"></a>  }</span>
+<span id="cb16-14"><a href="#cb16-14"></a>  </span>
+<span id="cb16-15"><a href="#cb16-15"></a>   </span>
+<span id="cb16-16"><a href="#cb16-16"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="ordenando-el-código" class="slide level2">
+<h2>Ordenando el código</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">funciones</a></li><li><a href="#tabset-2-2">llamado a funciones</a></li><li><a href="#tabset-2-3">todo junto</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="|2-7|11-15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Función para obtener urls</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>obtener_urls <span class="ot">&lt;-</span> <span class="cf">function</span>(banda) {</span>
+<span id="cb17-3"><a href="#cb17-3"></a>  band_url <span class="ot">&lt;-</span>  <span class="fu">sprintf</span>(<span class="st">"https://www.letras.com/%s"</span>, banda)</span>
+<span id="cb17-4"><a href="#cb17-4"></a>  urls <span class="ot">&lt;-</span>  <span class="fu">read_html</span>(band_url) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="#cb17-5"></a>      <span class="fu">html_elements</span>(<span class="st">".songList-table-songName"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-6"><a href="#cb17-6"></a>      <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">return</span>(urls)</span>
+<span id="cb17-8"><a href="#cb17-8"></a>}</span>
+<span id="cb17-9"><a href="#cb17-9"></a></span>
+<span id="cb17-10"><a href="#cb17-10"></a><span class="co"># Función para extraer letra</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>extraer_letra <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {</span>
+<span id="cb17-12"><a href="#cb17-12"></a>  lyric <span class="ot">&lt;-</span><span class="fu">read_html</span>(url) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-13"><a href="#cb17-13"></a>      <span class="fu">html_element</span>(<span class="st">".lyric-original"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-14"><a href="#cb17-14"></a>      <span class="fu">html_text</span>()</span>
+<span id="cb17-15"><a href="#cb17-15"></a>  <span class="fu">return</span>(lyric)  </span>
+<span id="cb17-16"><a href="#cb17-16"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Raíz de la página</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>root <span class="ot">&lt;-</span> <span class="st">"https://www.letras.com"</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="co"># Usar map para crear la lista </span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>urls <span class="ot">&lt;-</span> <span class="fu">obtener_urls</span>(<span class="st">"the-clash"</span>)</span>
+<span id="cb18-6"><a href="#cb18-6"></a>full_urls <span class="ot">&lt;-</span> <span class="fu">paste0</span>(root, urls )</span>
+<span id="cb18-7"><a href="#cb18-7"></a>lyrics <span class="ot">&lt;-</span>  <span class="fu">map</span>(full_urls[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>], extraer_letra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-3">
+<p>Podemos unir todo en una función</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="|1-10|7,9|13,14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>obtener_letras_banda <span class="ot">&lt;-</span> <span class="cf">function</span>(banda, <span class="at">n_letras =</span> <span class="dv">5</span>) {</span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="co"># Raíz de la página</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  root <span class="ot">&lt;-</span> <span class="st">"https://www.letras.com"</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>  </span>
+<span id="cb19-6"><a href="#cb19-6"></a>  <span class="co"># Usar map para crear la lista </span></span>
+<span id="cb19-7"><a href="#cb19-7"></a>  urls <span class="ot">&lt;-</span> <span class="fu">obtener_urls</span>(banda)</span>
+<span id="cb19-8"><a href="#cb19-8"></a>  full_urls <span class="ot">&lt;-</span> <span class="fu">paste0</span>(root, urls )</span>
+<span id="cb19-9"><a href="#cb19-9"></a>  lyrics <span class="ot">&lt;-</span>  <span class="fu">map</span>(full_urls[<span class="dv">1</span><span class="sc">:</span>n_letras], extraer_letra)</span>
+<span id="cb19-10"><a href="#cb19-10"></a>  <span class="fu">return</span>(lyrics)</span>
+<span id="cb19-11"><a href="#cb19-11"></a>}</span>
+<span id="cb19-12"><a href="#cb19-12"></a></span>
+<span id="cb19-13"><a href="#cb19-13"></a>bandas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"doja-cat"</span>, <span class="st">"the-clash"</span>, <span class="st">"los-prisioneros"</span>)</span>
+<span id="cb19-14"><a href="#cb19-14"></a>letras <span class="ot">&lt;-</span>  <span class="fu">map</span>(bandas, obtener_letras_banda)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="último-paso" class="slide level2">
+<h2>Último paso</h2>
+<p>¿Notan algo extraño en la letra de Los Prisioneros?</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>[1] "  Yo soy cocinero trabajo donde PelayoPelayo es mi jefe Pelayo es quien pagaSi hay algo que me asustaY es algo que no me gustaEs que debo aliñar con aceite humanoLos trae en  toneles de alguna extraña parteJamás he probado esoPero los que lo han probado no han vuelto jamás...- Mozo: ¿Puede llamar al cocinero, por favor?.¿El cocinero?- Sí, yo soy- Yo soy de Investigaciones y le llamé porque la comida tiene un sabor ciertamente extraño. Yo creo que es el aceite. Yo lo encarcelaré, amigo, y usted se secará ¿Oyó? Se secaráSoy cocinero trabajo donde PelayoPelayo es mi jefe Pelayo es quien paga- Así que ya oyó mi amigo ¿me entendió? ¿o se lo voy a tener que cantar otra vez?- Oiga, pero...- Nada- Ya pues...- WeeeeeLos trae en toneles de alguna extraña parteJamás he probado eso pero los que lo han probado no han vuelto jamás...  "</code></pre>
 </div>
 </div>
+</section>
+<section id="coming-soon" class="slide level2">
+<h2>Coming soon…</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">fix_string</span>(letra_prisioneros)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] " Yo soy cocinero trabajo donde  Pelayo Pelayo es mi jefe  Pelayo es quien paga Si hay algo que me asusta Y es algo que no me gusta Es que debo aliñar con aceite humano Los trae en  toneles de alguna extraña parte Jamás he probado eso Pero los que lo han probado no han vuelto jamás...-  Mozo: ¿ Puede llamar al cocinero, por favor?.¿ El cocinero?-  Sí, yo soy-  Yo soy de  Investigaciones y le llamé porque la comida tiene un sabor ciertamente extraño.  Yo creo que es el aceite.  Yo lo encarcelaré, amigo, y usted se secará ¿ Oyó?  Se secará Soy cocinero trabajo donde  Pelayo Pelayo es mi jefe  Pelayo es quien paga-  Así que ya oyó mi amigo ¿me entendió? ¿o se lo voy a tener que cantar otra vez?-  Oiga, pero...-  Nada-  Ya pues...-  Weeeee Los trae en toneles de alguna extraña parte Jamás he probado eso pero los que lo han probado no han vuelto jamás..."</code></pre>
+</div>
+</div>
+<p>Esta función sigue teniendo algunos defectos 😲</p>
+</section></section>
+<section>
+<section id="qué-pasa-con-las-páginas-dinámicas" class="title-slide slide level1 center" data-background-color="aquamarine">
+<h1>¿Qué pasa con las páginas dinámicas?</h1>
+
+</section>
+<section id="páginas-dinámicas" class="slide level2">
+<h2>Páginas dinámicas</h2>
+<p>Muchas páginas interesantes van cargando conforme interactuamos con ellas</p>
+<ul>
+<li>Supermercados</li>
+<li>Tiendas del <em>retail</em></li>
+<li>Portales de empleo</li>
+<li>Diarios</li>
+<li>etc.</li>
+</ul>
+<div class="fragment">
+<p>Veamos algunos ejemplos</p>
+</div>
+</section>
+<section id="problemas-de-investigación" class="slide level2">
+<h2>Problemas de investigación</h2>
+<p>Dinámicas del mercado laboral</p>
+<div class="fragment">
+<p>Monitoreo de precios para IPC</p>
+</div>
+<div class="fragment">
+<p>Análisis de prensa escrita</p>
+</div>
+</section>
+<section id="selenium" class="slide level2">
+<h2>Selenium</h2>
+<p>Selenium nos permite automatizar la interacción con los navegadores</p>
+<div class="fragment">
+<p>Tendremos que usar tecnologías que están fuera de <code>R</code></p>
+<ul>
+<li>Selenium</li>
+<li>Docker</li>
+<li>Java</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Revisaremos algunos usos más avanzados, para quienes estén interesados</p>
+</div>
+<div class="fragment">
+<p>Solo haremos una demostración. Si quieren profundizar, pueden seguir estas documentaciones</p>
+<ul>
+<li><a href="https://docs.ropensci.org/RSelenium/articles/basics.html">Documentación 1</a></li>
+<li><a href="https://docs.ropensci.org/RSelenium/articles/docker.html">Documentación 2</a></li>
+</ul>
+</div>
+</section>
+<section id="instalación" class="slide level2">
+<h2>Instalación</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">install.packages</span>(<span class="st">"Rselenium"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Además, deben tener instalado Selenium en un contenedor o localmente</p>
+</section>
+<section id="seteo-inicial" class="slide level2">
+<h2>Seteo inicial</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">library</span>(RSelenium)</span>
+<span id="cb24-2"><a href="#cb24-2"></a>remDr <span class="ot">&lt;-</span> <span class="fu">remoteDriver</span>(</span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="at">remoteServerAddr =</span> <span class="st">"localhost"</span>,</span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="at">port =</span> 4445L,</span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="at">browserName =</span> <span class="st">"firefox"</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>)</span>
+<span id="cb24-7"><a href="#cb24-7"></a>remDr<span class="sc">$</span><span class="fu">open</span>(<span class="at">silent =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Connecting to remote server"
+$applicationCacheEnabled
+[1] TRUE
+
+$rotatable
+[1] FALSE
+
+$handlesAlerts
+[1] TRUE
+
+$databaseEnabled
+[1] TRUE
+
+$version
+[1] "45.0.2"
+
+$platform
+[1] "LINUX"
+
+$nativeEvents
+[1] FALSE
+
+$acceptSslCerts
+[1] TRUE
+
+$webdriver.remote.sessionid
+[1] "eb824a46-8e04-41eb-9cce-05f44c401538"
+
+$webStorageEnabled
+[1] TRUE
+
+$locationContextEnabled
+[1] TRUE
+
+$browserName
+[1] "firefox"
+
+$takesScreenshot
+[1] TRUE
+
+$javascriptEnabled
+[1] TRUE
+
+$cssSelectorsEnabled
+[1] TRUE
+
+$id
+[1] "eb824a46-8e04-41eb-9cce-05f44c401538"</code></pre>
+</div>
+</div>
+</section>
+<section id="explorar-páginas" class="slide level2">
+<h2>Explorar páginas</h2>
+<p>Página de la BBC</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>remDr<span class="sc">$</span><span class="fu">navigate</span>(<span class="st">"http://www.bbc.com"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2"></a>remDr<span class="sc">$</span><span class="fu">getTitle</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "BBC - Homepage"</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Ahora nos vamos a emol</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>remDr<span class="sc">$</span><span class="fu">navigate</span>(<span class="st">"http://emol.com"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2"></a>remDr<span class="sc">$</span><span class="fu">getTitle</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "EMOL - El sitio de noticias online de Chile."</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="buscando-elementos" class="slide level2">
+<h2>Buscando elementos</h2>
+<p>Extraer los elementos “a”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>a_elements <span class="ot">&lt;-</span> remDr<span class="sc">$</span><span class="fu">findElements</span>(<span class="at">using =</span> <span class="st">"css"</span>, <span class="at">value =</span> <span class="st">"a"</span>)</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">length</span>(a_elements)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 239</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Para extraer el texto de uno de los elementos usamos <code>getElementText</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>a_elements[[<span class="dv">60</span>]]<span class="sc">$</span><span class="fu">getElementText</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] ""</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="interactuar-con-la-página" class="slide level2">
+<h2>¿Interactuar con la página?</h2>
+<p>Primero, entramos a la máquina virtual que contiene el servicio</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Página inicial de la BBC</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>remDr<span class="sc">$</span><span class="fu">navigate</span>(<span class="st">"http://www.bbc.com"</span>)</span>
+<span id="cb34-3"><a href="#cb34-3"></a></span>
+<span id="cb34-4"><a href="#cb34-4"></a><span class="co"># Encontrar el botón de noticias</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>news <span class="ot">&lt;-</span> remDr<span class="sc">$</span><span class="fu">findElement</span>(<span class="at">using =</span> <span class="st">"css"</span>, <span class="at">value =</span> <span class="st">"nav.orbit-header-links:nth-child(5) &gt; ul:nth-child(1) &gt; li:nth-child(2) &gt; a:nth-child(1)"</span>)</span>
+<span id="cb34-6"><a href="#cb34-6"></a></span>
+<span id="cb34-7"><a href="#cb34-7"></a><span class="co"># Hacer click</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a>news<span class="sc">$</span><span class="fu">clickElement</span>()</span>
+<span id="cb34-9"><a href="#cb34-9"></a></span>
+<span id="cb34-10"><a href="#cb34-10"></a><span class="co"># Página inicial de BBC</span></span>
+<span id="cb34-11"><a href="#cb34-11"></a>remDr<span class="sc">$</span><span class="fu">navigate</span>(<span class="st">"http://www.bbc.com"</span>)</span>
+<span id="cb34-12"><a href="#cb34-12"></a></span>
+<span id="cb34-13"><a href="#cb34-13"></a><span class="co"># Encontrar el botón de deportes</span></span>
+<span id="cb34-14"><a href="#cb34-14"></a>deportes <span class="ot">&lt;-</span> remDr<span class="sc">$</span><span class="fu">findElement</span>(<span class="at">using =</span> <span class="st">"css"</span>, <span class="at">value =</span> <span class="st">"nav.orbit-header-links:nth-child(5) &gt; ul:nth-child(1) &gt; li:nth-child(3) &gt; a:nth-child(1) &gt; span:nth-child(1)"</span>)</span>
+<span id="cb34-15"><a href="#cb34-15"></a></span>
+<span id="cb34-16"><a href="#cb34-16"></a><span class="co"># Clickear en botón de deportes</span></span>
+<span id="cb34-17"><a href="#cb34-17"></a>deportes<span class="sc">$</span><span class="fu">clickElement</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="para-finalizar" class="slide level2">
+<h2>Para finalizar</h2>
+<p>Es conveniente cerrar nuestra conexión</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>remDr<span class="sc">$</span><span class="fu">close</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<ul>
+<li><p>El <em>web scraping</em> es muy útil para el mundo profesional y académico</p></li>
+<li><p>Nos da acceso a fuentes masivas de información (especialmente texto)</p></li>
+<li><p>Es un trabajo de artesanía que requiere paciencia y dedicación</p></li>
+</ul>
+</div>
+</section>
+<section id="próxima-clase" class="slide level2">
+<h2>Próxima clase</h2>
+<p>Todos deben tener una cuenta de <em>Spotify</em> (pagada o gratis)</p>
+<p>Completen hasta el punto 3 del siguiente tutorial</p>
+<p><a href="https://msmith7161.github.io/what-is-speechiness/">https://msmith7161.github.io/what-is-speechiness/</a></p>
+<p>La idea es que comencemos la clase con las credenciales listas.</p>
+</section></section>
+<section id="métodos-computacionales-para-las-ciencias-sociales" class="title-slide slide level1 center" data-background-color="aquamarine">
+<h1>Métodos computacionales para las ciencias sociales</h1>
 <div class="footer footer-default">
 
 </div>
@@ -360,19 +1014,19 @@
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="prueba_quarto_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="prueba_quarto_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="prueba_quarto_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="prueba_quarto_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="prueba_quarto_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="prueba_quarto_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="prueba_quarto_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="prueba_quarto_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="prueba_quarto_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="prueba_quarto_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="06-extraccion-informacion_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

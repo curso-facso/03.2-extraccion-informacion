@@ -553,6 +553,20 @@ remDr$close()
 
 . . .
 
+## Próxima clase
+
+Todos deben tener una cuenta de *Spotify* (pagada o gratis)
+
+Completen hasta el punto 3 del siguiente tutorial
+
+[https://msmith7161.github.io/what-is-speechiness/](https://msmith7161.github.io/what-is-speechiness/) 
+
+La idea es que comencemos la clase con las credenciales listas.
+
+
+
+
+
 # Métodos computacionales para las ciencias sociales  {.center background-color="aquamarine"}
 
 
