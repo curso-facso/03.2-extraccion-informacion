@@ -879,7 +879,7 @@ $databaseEnabled
 [1] TRUE
 
 $version
-[1] "45.0.2"
+[1] "47.0.1"
 
 $platform
 [1] "LINUX"
@@ -891,7 +891,7 @@ $acceptSslCerts
 [1] TRUE
 
 $webdriver.remote.sessionid
-[1] "eb824a46-8e04-41eb-9cce-05f44c401538"
+[1] "76c91c8e-4fdd-4a34-859c-f421f007ba68"
 
 $webStorageEnabled
 [1] TRUE
@@ -912,7 +912,7 @@ $cssSelectorsEnabled
 [1] TRUE
 
 $id
-[1] "eb824a46-8e04-41eb-9cce-05f44c401538"</code></pre>
+[1] "76c91c8e-4fdd-4a34-859c-f421f007ba68"</code></pre>
 </div>
 </div>
 </section>
@@ -946,16 +946,16 @@ $id
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>a_elements <span class="ot">&lt;-</span> remDr<span class="sc">$</span><span class="fu">findElements</span>(<span class="at">using =</span> <span class="st">"css"</span>, <span class="at">value =</span> <span class="st">"a"</span>)</span>
 <span id="cb30-2"><a href="#cb30-2"></a><span class="fu">length</span>(a_elements)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 239</code></pre>
+<pre><code>[1] 302</code></pre>
 </div>
 </div>
 <div class="fragment">
 <p>Para extraer el texto de uno de los elementos usamos <code>getElementText</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>a_elements[[<span class="dv">60</span>]]<span class="sc">$</span><span class="fu">getElementText</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>a_elements[[<span class="dv">70</span>]]<span class="sc">$</span><span class="fu">getElementText</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] ""</code></pre>
+[1] "24"</code></pre>
 </div>
 </div>
 </div>

@@ -500,7 +500,7 @@ length(a_elements)
 Para extraer el texto de uno de los elementos usamos `getElementText`
 
 ```{r, echo=TRUE}
-a_elements[[60]]$getElementText()
+a_elements[[70]]$getElementText()
 ```
 
 . . .
