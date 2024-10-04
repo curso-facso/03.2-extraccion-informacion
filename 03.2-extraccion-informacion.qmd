@@ -461,9 +461,10 @@ Además, deben tener instalado Selenium en un contenedor o localmente
 library(RSelenium)
 remDr <- remoteDriver(
   remoteServerAddr = "localhost",
-  port = 4445L,
+  port = 4445,
   browserName = "firefox"
 )
+
 remDr$open(silent = FALSE)
 ```
 
@@ -512,10 +513,10 @@ Primero, entramos a la máquina virtual que contiene el servicio
 ```{r, eval=F, echo=TRUE}
 
 # Página inicial de la BBC
-remDr$navigate("http://www.bbc.com")
+remDr$navigate("https://www.bbc.com")
 
 # Encontrar el botón de noticias
-news <- remDr$findElement(using = "css", value = "nav.orbit-header-links:nth-child(5) > ul:nth-child(1) > li:nth-child(2) > a:nth-child(1)")
+news <- remDr$findElement(using = "css", value = "#__next > div > nav > section > nav > ul > li:nth-child(2) > div > a")
 
 # Hacer click
 news$clickElement()
@@ -524,7 +525,7 @@ news$clickElement()
 remDr$navigate("http://www.bbc.com")
 
 # Encontrar el botón de deportes
-deportes <- remDr$findElement(using = "css", value = "nav.orbit-header-links:nth-child(5) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1) > span:nth-child(1)")
+deportes <- remDr$findElement(using = "css", value = "#__next > div > nav > section > nav > ul > li:nth-child(3) > div > a")
 
 # Clickear en botón de deportes
 deportes$clickElement()
@@ -532,6 +533,9 @@ deportes$clickElement()
 
 
 ```
+
+
+
 
 
 
@@ -550,18 +554,6 @@ remDr$close()
 - Nos da acceso a fuentes masivas de información (especialmente texto)
 
 - Es un trabajo de artesanía que requiere paciencia y dedicación
-
-. . .
-
-## Próxima clase
-
-Todos deben tener una cuenta de *Spotify* (pagada o gratis)
-
-Completen hasta el punto 3 del siguiente tutorial
-
-[https://msmith7161.github.io/what-is-speechiness/](https://msmith7161.github.io/what-is-speechiness/) 
-
-La idea es que comencemos la clase con las credenciales listas.
 
 
 
