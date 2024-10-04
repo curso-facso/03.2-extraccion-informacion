@@ -457,6 +457,13 @@ Además, deben tener instalado Selenium en un contenedor o localmente
 
 ## Seteo inicial
 
+```{r correr selenium, eval=FALSE}
+
+system("docker run -d -p 4445:4444 -p 5901:5900 --name selenium selenium/standalone-firefox-debug:2.53.0")
+
+```
+
+
 ```{r, eval=TRUE, message=FALSE, echo=T, warning=FALSE}
 library(RSelenium)
 remDr <- remoteDriver(
