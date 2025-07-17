@@ -542,7 +542,18 @@ deportes$clickElement()
 ```
 
 
+## A tener en cuenta
 
+```{r, eval=F, echo=TRUE}
+remDr$navigate("https://www.lider.cl/inicio")
+input  <- remDr$findElements(using = "css", value = ".b--none")
+
+input[[2]]$sendKeysToElement(list("papas fritas", key = "enter"))
+
+
+```
+
+Hay sitios que detectan el uso de navegación automática
 
 ## Para finalizar
 
