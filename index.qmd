@@ -19,39 +19,13 @@ Web scraping con rvest
 
 Web scraping con rselenium
 
-Primera parte APIs
 
 ## Produciendo datos
 
-::: columns
-::: {.column width="50%"}
-<img src="imagenes/ferrari.jpg" width="400"/>
-:::
+![](imagenes/tractor.jpg){fig-align="center" width="50%"}
 
-::: {.column width="50%"}
-::: fragment
-<img src="imagenes/tractor.jpg" width="500"/>
-:::
-:::
-:::
+**Cuando no tenemos una API a disposición, web scraping puede ser una opción**
 
-------------------------------------------------------------------------
-
-## Produciendo datos
-
-gratis != fácil
-
-. . .
-
-Las fuentes de datos no tradicionales y/o web muchas veces implican un arduo trabajo de captura y procesamiento
-
-. . .
-
-Debemos entrenarnos para ser buenos productores de información
-
-. . .
-
-### No debemos asustarnos si nos encontramos con tecnologías que no conocemos bien
 
 ## Produciendo datos
 
@@ -457,11 +431,15 @@ Además, deben tener instalado Selenium en un contenedor o localmente
 
 ## Seteo inicial
 
-```{r correr selenium, eval=FALSE}
+En linux o macOS, podemos hacer andar Selenium desde la línea de comandos
+
+```{r correr selenium, eval=FALSE, echo=T}
 
 system("docker run -d -p 4445:4444 -p 5901:5900 --name selenium selenium/standalone-firefox-debug:2.53.0")
 
 ```
+
+Nos conectamos al servicio que acabamos de hacer andar
 
 
 ```{r, eval=TRUE, message=FALSE, echo=T, warning=FALSE}
@@ -503,15 +481,37 @@ a_elements <- remDr$findElements(using = "css", value = "a")
 length(a_elements)
 ```
 
-. . . 
+. . .
 
 Para extraer el texto de uno de los elementos usamos `getElementText`
 
 ```{r, echo=TRUE}
-a_elements[[70]]$getElementText()
+a_elements[[1]]$getElementText()
 ```
 
-. . .
+## Explorando el texto de los elementos
+
+Miremos algunos de los textos contenidos en la lista
+
+```{r}
+for (text in a_elements[1:5])
+  {
+    print(text$getElementText())
+  }
+```
+
+## Explorando el texto de los elementos
+
+Guardemos todo en una lista y construyamos un *dataframe*
+
+```{r}
+textos <- map(a_elements, ~.x$getElementText()[[1]] )
+data.frame(text = unlist(textos)) |> 
+  filter(text != "") |> 
+  DT::datatable()
+
+
+```
 
 ## ¿Interactuar con la página?
 
@@ -544,8 +544,6 @@ deportes$clickElement()
 
 
 
-
-
 ## Para finalizar
 
 Es conveniente cerrar nuestra conexión
@@ -562,7 +560,7 @@ remDr$close()
 
 - Es un trabajo de artesanía que requiere paciencia y dedicación
 
-
+- Tiene un costo de mantenimiento, que requiere ser evaluado en proyectos largos
 
 
 
