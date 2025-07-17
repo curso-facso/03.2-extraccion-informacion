@@ -11,3 +11,8 @@
 .center h1 {
   text-align: center;
 }
+
+table.dataTable td,
+table.dataTable th {
+  font-size: 14px;
+}
