@@ -467,17 +467,17 @@ remDr$getTitle()
 Ahora nos vamos a emol
 
 ```{r, echo=TRUE}
-remDr$navigate("http://emol.com")
+remDr$navigate("https://www.emol.com/")
 remDr$getTitle()
 
 ```
 
 ## Buscando elementos
 
-Extraer los elementos "a"
+Extraer los elementos "p"
 
 ```{r, echo=TRUE}
-a_elements <- remDr$findElements(using = "css", value = "a")
+a_elements <- remDr$findElements(using = "css", value = "p")
 length(a_elements)
 ```
 
@@ -494,7 +494,7 @@ a_elements[[1]]$getElementText()
 Miremos algunos de los textos contenidos en la lista
 
 ```{r}
-for (text in a_elements[1:5])
+for (text in a_elements)
   {
     print(text$getElementText())
   }

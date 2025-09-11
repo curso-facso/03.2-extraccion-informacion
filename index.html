@@ -539,9 +539,9 @@
 <span id="cb1-4"><a href=""></a><span class="fu">print</span>(page)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{html_document}
-&lt;html data-theme="light" dir="ltr" lang="es" data-platform="desktop"&gt;
+&lt;html data-locale="es-es" data-platform="desktop" data-theme="light" dir="ltr" lang="es"&gt;
 [1] &lt;head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"&gt;\n&lt;meta htt ...
-[2] &lt;body id="body" data-locale="es-es" class="es-es "&gt; &lt;script type="text/ja ...</code></pre>
+[2] &lt;body class="es-es" data-locale="es-es" id="body" itemscope="" itemtype=" ...</code></pre>
 </div>
 </div>
 </section>
@@ -556,25 +556,22 @@
 <span id="cb3-2"><a href=""></a>  <span class="fu">html_elements</span>(<span class="st">"p"</span>) </span>
 <span id="cb3-3"><a href=""></a><span class="fu">print</span>(parrafos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{xml_nodeset (18)}
- [1] &lt;p class="textStyle-primary"&gt; Géneros musicales &lt;/p&gt;
- [2] &lt;p class="textStyle-primary"&gt; Canciones &lt;/p&gt;
- [3] &lt;p class="textStyle-primary"&gt; Artistas &lt;/p&gt;
- [4] &lt;p class="textStyle-primary"&gt; Álbumes &lt;/p&gt;
- [5] &lt;p class="textStyle-primary"&gt; Playlists &lt;/p&gt;
- [6] &lt;p class="textStyle-primary"&gt; Blog &lt;/p&gt;
- [7] &lt;p class="textStyle-primary"&gt; Práctica de pronunciación &lt;/p&gt;
- [8] &lt;p class="textStyle-primary"&gt; Clases rápidas &lt;/p&gt;
- [9] &lt;p class="textStyle-primary"&gt; Cursos de idiomas &lt;/p&gt;
-[10] &lt;p class="textStyle-primary"&gt; Enviar letras, traducirlas y más &lt;/p&gt;
-[11] &lt;p class="contextualPlanModal-subtitle font --copy --size14 contextualPl ...
-[12] &lt;p&gt;Pague uma vez e &lt;strong class="font --base --strong --size12"&gt;use por ...
-[13] &lt;p class="contextualPlanCard-header-text isLoading"&gt; &lt;span class="header ...
-[14] &lt;p class="contextualPlanCard-description font --base --regular --size16" ...
-[15] &lt;p class="contextualPlanCard-header-text isLoading"&gt; &lt;span class="header ...
-[16] &lt;p class="contextualPlanCard-description font --base --regular --size16" ...
-[17] &lt;p class="contextualPlanModal-text font --base --size12"&gt; Já é assinante ...
-[18] &lt;p class="footer-letrasText font --copy --size14"&gt; &lt;span&gt; Música comienz ...</code></pre>
+<pre><code>{xml_nodeset (15)}
+ [1] &lt;p class="textStyle-primary"&gt;Géneros musicales&lt;/p&gt;
+ [2] &lt;p class="textStyle-primary"&gt;Canciones&lt;/p&gt;
+ [3] &lt;p class="textStyle-primary"&gt;Artistas&lt;/p&gt;
+ [4] &lt;p class="textStyle-primary"&gt;Álbumes&lt;/p&gt;
+ [5] &lt;p class="textStyle-primary"&gt;Playlists&lt;/p&gt;
+ [6] &lt;p class="textStyle-primary"&gt;Blog&lt;/p&gt;
+ [7] &lt;p class="textStyle-primary"&gt;Enviar letras, traducirlas y más&lt;/p&gt;
+ [8] &lt;p class="contextualPlanModal-subtitle font --copy --size14 contextualPl ...
+ [9] &lt;p&gt;Paga una vez y &lt;strong class="font --base --strong --size12"&gt;usa dura ...
+[10] &lt;p class="contextualPlanCard-header-text isLoading"&gt;&lt;span class="header- ...
+[11] &lt;p class="contextualPlanCard-description font --base --regular --size16" ...
+[12] &lt;p class="contextualPlanCard-header-text isLoading"&gt;&lt;span class="header- ...
+[13] &lt;p class="contextualPlanCard-description font --base --regular --size16" ...
+[14] &lt;p class="contextualPlanModal-text font --base --size12"&gt;¿Ya te has susc ...
+[15] &lt;p class="footer-letrasText font --copy --size14"&gt;&lt;span&gt;Música comienza  ...</code></pre>
 </div>
 </div>
 </div>
@@ -583,24 +580,21 @@
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>parrafos <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href=""></a>  <span class="fu">html_text</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] " Géneros musicales "                                                                                    
- [2] " Canciones "                                                                                            
- [3] " Artistas "                                                                                             
- [4] " Álbumes "                                                                                              
- [5] " Playlists "                                                                                            
- [6] " Blog "                                                                                                 
- [7] " Práctica de pronunciación "                                                                            
- [8] " Clases rápidas "                                                                                       
- [9] " Cursos de idiomas "                                                                                    
-[10] " Enviar letras, traducirlas y más "                                                                     
-[11] " Curta as suas músicas sem interrupções "                                                               
-[12] "Pague uma vez e use por um ano inteiro"                                                                 
-[13] " R$   /ano "                                                                                            
-[14] "Use o Letras sem anúncios."                                                                             
-[15] " R$   /ano "                                                                                            
-[16] "Benefícios Premium + aulas de idiomas com música."                                                      
-[17] " Já é assinante? Faça login. "                                                                          
-[18] "  Música comienza con letras   © 2003 - 2025, 3.6 millones de canciones   Hecho con amor desde Brasil  "</code></pre>
+<pre><code> [1] "Géneros musicales"                                                                              
+ [2] "Canciones"                                                                                      
+ [3] "Artistas"                                                                                       
+ [4] "Álbumes"                                                                                        
+ [5] "Playlists"                                                                                      
+ [6] "Blog"                                                                                           
+ [7] "Enviar letras, traducirlas y más"                                                               
+ [8] "Disfruta de tus canciones sin molestias"                                                        
+ [9] "Paga una vez y usa durante todo un año"                                                         
+[10] "R$   /ano"                                                                                      
+[11] "Usa Letras.com sin anuncios."                                                                   
+[12] "R$   /ano"                                                                                      
+[13] "Beneficios Premium + clases de idiomas con música."                                             
+[14] "¿Ya te has suscrito? Inicia sesión."                                                            
+[15] "Música comienza con letras © 2003 - 2025, 3.6 millones de canciones Hecho con amor desde Brasil"</code></pre>
 </div>
 </div>
 </div>
@@ -644,11 +638,9 @@
 <span id="cb8-3"><a href=""></a>    <span class="fu">html_attr</span>(<span class="st">"href"</span>)</span>
 <span id="cb8-4"><a href=""></a><span class="fu">print</span>(urls_canciones[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "/los-prisioneros/567100/"                       
-[2] "/los-prisioneros/acomodado-en-el-rock-and-roll/"
-[3] "/los-prisioneros/algo-ilegal/"                  
-[4] "/los-prisioneros/372889/"                       
-[5] "/los-prisioneros/alone-again-naturally/"        </code></pre>
+<pre><code>[1] "/los-prisioneros/23570/"  "/los-prisioneros/180488/"
+[3] "/los-prisioneros/372900/" "/los-prisioneros/567130/"
+[5] "/los-prisioneros/23571/" </code></pre>
 </div>
 </div>
 <ul>
@@ -664,10 +656,10 @@
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>url_1 <span class="ot">&lt;-</span>  <span class="fu">paste0</span>(<span class="st">"https://www.letras.com"</span>,  urls_canciones[<span class="dv">1</span>]) </span>
 <span id="cb10-2"><a href=""></a><span class="fu">print</span>(url_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "https://www.letras.com/los-prisioneros/567100/"</code></pre>
+<pre><code>[1] "https://www.letras.com/los-prisioneros/23570/"</code></pre>
 </div>
 </div>
-<p>https://www.letras.com/los-prisioneros/567100/</p>
+<p>https://www.letras.com/los-prisioneros/23570/</p>
 </section>
 <section id="extraer-la-letra" class="slide level2">
 <h2>Extraer la letra</h2>
@@ -678,7 +670,7 @@
 <span id="cb12-3"><a href=""></a>      <span class="fu">html_text</span>()</span>
 <span id="cb12-4"><a href=""></a><span class="fu">print</span>(lyric)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "  Yo soy cocinero trabajo donde PelayoPelayo es mi jefe Pelayo es quien pagaSi hay algo que me asustaY es algo que no me gustaEs que debo aliñar con aceite humanoLos trae en  toneles de alguna extraña parteJamás he probado esoPero los que lo han probado no han vuelto jamás...- Mozo: ¿Puede llamar al cocinero, por favor?.¿El cocinero?- Sí, yo soy- Yo soy de Investigaciones y le llamé porque la comida tiene un sabor ciertamente extraño. Yo creo que es el aceite. Yo lo encarcelaré, amigo, y usted se secará ¿Oyó? Se secaráSoy cocinero trabajo donde PelayoPelayo es mi jefe Pelayo es quien paga- Así que ya oyó mi amigo ¿me entendió? ¿o se lo voy a tener que cantar otra vez?- Oiga, pero...- Nada- Ya pues...- WeeeeeLos trae en toneles de alguna extraña parteJamás he probado eso pero los que lo han probado no han vuelto jamás...  "</code></pre>
+<pre><code>[1] "Recuerdo cuando dije que este inviernoSería menos frío que el anteriorY aquí estoy congelándomeNo es fácil para mí hablar de estoY manosear las mismas palabras de amorQue se entreganA cualquieraParamar, paramarDebes tratar de poco entregarParamar, paramarTu identidad debes falsearPara amar, para amarSiendo estupido serás felizParamar, paramarDebes evitar soñar, debes olvidar soñarRecuerdo cuando pensé que en el mundoSolo podría hacerme feliz alguna vezAlguien como túNadie más que túCaminando en el frío me preguntoSi no ha nacido alguna chiquillaQue no sepa amarY quiera inventar una nueva formaParamar, paramarDebes tratar de poco entregarParamar, paramarTu identidad debes falsearParamar, paramarSiendo estúpido, serás felizPar amar, paramarDebes evitar soñarAmor, amor, donde oí esa palabra antes?Rehice por ti mi horarioY compre más calendariosMe paso un video en 3 dimensionesCon un final felizTrate de inyectarme mi viejo optimismoPero ese que resultoAún era yo, listo paramarNunca pensé que justo este inviernoSería el más frío que he visto pasarYo no sirvo paramar"</code></pre>
 </div>
 </div>
 </section>
@@ -690,7 +682,7 @@
 <span id="cb14-3"><a href=""></a>      <span class="fu">html_text</span>()</span>
 <span id="cb14-4"><a href=""></a><span class="fu">print</span>(title)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "\n        Aceite Humano\n    "</code></pre>
+<pre><code>[1] "Paramar"</code></pre>
 </div>
 </div>
 </section>
@@ -804,7 +796,7 @@
 <p>¿Notan algo extraño en la letra de Los Prisioneros?</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "  Yo soy cocinero trabajo donde PelayoPelayo es mi jefe Pelayo es quien pagaSi hay algo que me asustaY es algo que no me gustaEs que debo aliñar con aceite humanoLos trae en  toneles de alguna extraña parteJamás he probado esoPero los que lo han probado no han vuelto jamás...- Mozo: ¿Puede llamar al cocinero, por favor?.¿El cocinero?- Sí, yo soy- Yo soy de Investigaciones y le llamé porque la comida tiene un sabor ciertamente extraño. Yo creo que es el aceite. Yo lo encarcelaré, amigo, y usted se secará ¿Oyó? Se secaráSoy cocinero trabajo donde PelayoPelayo es mi jefe Pelayo es quien paga- Así que ya oyó mi amigo ¿me entendió? ¿o se lo voy a tener que cantar otra vez?- Oiga, pero...- Nada- Ya pues...- WeeeeeLos trae en toneles de alguna extraña parteJamás he probado eso pero los que lo han probado no han vuelto jamás...  "</code></pre>
+<pre><code>[1] "Recuerdo cuando dije que este inviernoSería menos frío que el anteriorY aquí estoy congelándomeNo es fácil para mí hablar de estoY manosear las mismas palabras de amorQue se entreganA cualquieraParamar, paramarDebes tratar de poco entregarParamar, paramarTu identidad debes falsearPara amar, para amarSiendo estupido serás felizParamar, paramarDebes evitar soñar, debes olvidar soñarRecuerdo cuando pensé que en el mundoSolo podría hacerme feliz alguna vezAlguien como túNadie más que túCaminando en el frío me preguntoSi no ha nacido alguna chiquillaQue no sepa amarY quiera inventar una nueva formaParamar, paramarDebes tratar de poco entregarParamar, paramarTu identidad debes falsearParamar, paramarSiendo estúpido, serás felizPar amar, paramarDebes evitar soñarAmor, amor, donde oí esa palabra antes?Rehice por ti mi horarioY compre más calendariosMe paso un video en 3 dimensionesCon un final felizTrate de inyectarme mi viejo optimismoPero ese que resultoAún era yo, listo paramarNunca pensé que justo este inviernoSería el más frío que he visto pasarYo no sirvo paramar"</code></pre>
 </div>
 </div>
 </section>
@@ -813,7 +805,7 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">fix_string</span>(letra_prisioneros)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] " Yo soy cocinero trabajo donde  Pelayo Pelayo es mi jefe  Pelayo es quien paga Si hay algo que me asusta Y es algo que no me gusta Es que debo aliñar con aceite humano Los trae en  toneles de alguna extraña parte Jamás he probado eso Pero los que lo han probado no han vuelto jamás...-  Mozo: ¿ Puede llamar al cocinero, por favor?.¿ El cocinero?-  Sí, yo soy-  Yo soy de  Investigaciones y le llamé porque la comida tiene un sabor ciertamente extraño.  Yo creo que es el aceite.  Yo lo encarcelaré, amigo, y usted se secará ¿ Oyó?  Se secará Soy cocinero trabajo donde  Pelayo Pelayo es mi jefe  Pelayo es quien paga-  Así que ya oyó mi amigo ¿me entendió? ¿o se lo voy a tener que cantar otra vez?-  Oiga, pero...-  Nada-  Ya pues...-  Weeeee Los trae en toneles de alguna extraña parte Jamás he probado eso pero los que lo han probado no han vuelto jamás..."</code></pre>
+<pre><code>[1] " Recuerdo cuando dije que este invierno Sería menos frío que el anterior Y aquí estoy congelándome No es fácil para mí hablar de esto Y manosear las mismas palabras de amor Que se entregan A cualquiera Paramar, paramar Debes tratar de poco entregar Paramar, paramar Tu identidad debes falsear Para amar, para amar Siendo estupido serás feliz Paramar, paramar Debes evitar soñar, debes olvidar soñar Recuerdo cuando pensé que en el mundo Solo podría hacerme feliz alguna vez Alguien como tú Nadie más que tú Caminando en el frío me pregunto Si no ha nacido alguna chiquilla Que no sepa amar Y quiera inventar una nueva forma Paramar, paramar Debes tratar de poco entregar Paramar, paramar Tu identidad debes falsear Paramar, paramar Siendo estúpido, serás feliz Par amar, paramar Debes evitar soñar Amor, amor, donde oí esa palabra antes? Rehice por ti mi horario Y compre más calendarios Me paso un video en 3 dimensiones Con un final feliz Trate de inyectarme mi viejo optimismo Pero ese que resulto Aún era yo, listo paramar Nunca pensé que justo este invierno Sería el más frío que he visto pasar Yo no sirvo paramar"</code></pre>
 </div>
 </div>
 <p>Esta función sigue teniendo algunos defectos 😲</p>
@@ -919,7 +911,7 @@ $acceptSslCerts
 [1] TRUE
 
 $webdriver.remote.sessionid
-[1] "e6f627b6-0245-4cc3-803e-3121923e2d8d"
+[1] "f0cf1c8d-12e2-40a8-b0b8-51b11cbe1e4d"
 
 $webStorageEnabled
 [1] TRUE
@@ -940,7 +932,7 @@ $cssSelectorsEnabled
 [1] TRUE
 
 $id
-[1] "e6f627b6-0245-4cc3-803e-3121923e2d8d"</code></pre>
+[1] "f0cf1c8d-12e2-40a8-b0b8-51b11cbe1e4d"</code></pre>
 </div>
 </div>
 </section>
@@ -958,7 +950,7 @@ $id
 <div class="fragment">
 <p>Ahora nos vamos a emol</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>remDr<span class="sc">$</span><span class="fu">navigate</span>(<span class="st">"http://emol.com"</span>)</span>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>remDr<span class="sc">$</span><span class="fu">navigate</span>(<span class="st">"https://www.emol.com/"</span>)</span>
 <span id="cb29-2"><a href=""></a>remDr<span class="sc">$</span><span class="fu">getTitle</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
@@ -969,12 +961,12 @@ $id
 </section>
 <section id="buscando-elementos" class="slide level2">
 <h2>Buscando elementos</h2>
-<p>Extraer los elementos “a”</p>
+<p>Extraer los elementos “p”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>a_elements <span class="ot">&lt;-</span> remDr<span class="sc">$</span><span class="fu">findElements</span>(<span class="at">using =</span> <span class="st">"css"</span>, <span class="at">value =</span> <span class="st">"a"</span>)</span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>a_elements <span class="ot">&lt;-</span> remDr<span class="sc">$</span><span class="fu">findElements</span>(<span class="at">using =</span> <span class="st">"css"</span>, <span class="at">value =</span> <span class="st">"p"</span>)</span>
 <span id="cb31-2"><a href=""></a><span class="fu">length</span>(a_elements)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 264</code></pre>
+<pre><code>[1] 28</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -983,7 +975,7 @@ $id
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a>a_elements[[<span class="dv">1</span>]]<span class="sc">$</span><span class="fu">getElementText</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] "EMOL"</code></pre>
+[1] "17:41 | Desde el poderío de Noah Lyles y Melissa Jefferson-Wooden hasta el esperado retorno de Yulimar Rojas."</code></pre>
 </div>
 </div>
 </div>
@@ -994,19 +986,88 @@ $id
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] "EMOL"
+[1] "17:41 | Desde el poderío de Noah Lyles y Melissa Jefferson-Wooden hasta el esperado retorno de Yulimar Rojas."
 
 [[1]]
-[1] "EL MERCURIO"
+[1] "Los altiplánicos quieren volver a un Mundial, algo que no logran desde 1994."
 
 [[1]]
-[1] "BLOGS"
+[1] "Se juega en noviembre."
 
 [[1]]
-[1] "LEGAL"
+[1] "No se jugará más en noviembre."
 
 [[1]]
-[1] "CAMPO"</code></pre>
+[1] "El torneo se disputará entre el 12 y el 28 de septiembre."
+
+[[1]]
+[1] "El futbolista se entrena por su cuenta."
+
+[[1]]
+[1] "El chileno podría debutar este viernes."
+
+[[1]]
+[1] "19:18 | Con todo, el Mandatario estadounidense evitó responder si planea imponer nuevas sanciones al país sudamericano."
+
+[[1]]
+[1] "18:01 | El Ejecutivo relativizó y puso en duda los cuestionamientos."
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] "18:35 | Autoridades informaron la medida a los pobladores en una reunión hace una semana."
+
+[[1]]
+[1] "18:35 | Los dichos de la legisladora generaron la condena de las autoridades de Bolivia y del propio presidente Arce."
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] "18:49 | El hecho ocurrió en el Liceo Bicentenario de la comuna."
+
+[[1]]
+[1] "17:03 | El episodio fue reportado este hoy y gatilló la activación del Protocolo de Seguridad."
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] "17:36 | El trabajador perdió la vida luego del volcamiento de un cargador frontal."
+
+[[1]]
+[1] "17:44 | Aseguran que cumplieron con el objetivo de poner al diputado en \"el mapa político\"."
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] "16:33 | Se estableció que hubo un sistema \"reiterado\" de estafa."
+
+[[1]]
+[1] "13:42 | La Tesorería publicó su primer Informe Semestral."
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] ""
+
+[[1]]
+[1] "Derechos de Autor | Políticas de Privacidad | Términos y Condiciones de los Servicios | Estándares de Publicidad"</code></pre>
 </div>
 </div>
 </section>
@@ -1015,8 +1076,8 @@ $id
 <p>Guardemos todo en una lista y construyamos un <em>dataframe</em></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-140171f30304f1784799" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-140171f30304f1784799">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157"],["EMOL","EL MERCURIO","BLOGS","LEGAL","CAMPO","INVERSIONES","AUTOS","PROPIEDADES","EMPLEOS","ECONÓMICOS.CL","AUTOS","CASAS","LA SEGUNDA","LUN","Ingresar","Registrarse","Noticias","Economía","Deportes","Espectáculos","Tendencias","Autos","Servicios","Chile","Mundo","Tecnología","Educación","Documentos","Multimedia","Juegos","Elecciones 2025","Pasatiempos","Streaming y entrevistas: La programación de este jueves 17 de julio","SHOPPING LIVE TV","SECCIONES","Para estar al día con la información y los temas más comentados","Las noticias que marcaron pauta en EmolTV","PORTADA\nUrquízar por sicario: \"Crimen organizado toma palco viendo cómo autoridades trasladan responsabilidad\"","PORTADA\nEbensperger por levantamiento del secreto bancario: \"Que la izquierda no mienta con que no existe\"","PORTADA\nU. Técnica Federico Santa María en Protagonistas 2030: \"Súmense a la creación del conocimiento\"","PORTADA\nInauguración del Centro de Simulación Avanzada LINK USS","Estalla la polémica en Clasificatorias: Bolivia podría perder puntos por doping de jugadores","54","Niemann cierra su 1.a jornada del The Open peleando en el top 20","5","Inntentaron \"regalar\" el club y \"nadie lo quiso\"... \"No hay ni agua\": La crisis que tiene al borde de la quiebra a emblemático equipo chileno","49","Quiénes son realmente los nuevos dueños de O'Higgins y el temor que hay por el traspaso: \"Preocupante\", \"claro conflicto de interés\"","57","Escándalo en el atletismo: Ruth Chepngetich, récord mundial de maratón, suspendida por dopaje","4","Borghi destapa el descalabro que hay en el camarín de Colo Colo, mientras un importante jugador está cerca de partir del Cacique","84","Álvarez otra vez dejaría a un histórico fuera... Así formaría la U ante Guaraní por la Sudamericana, a qué hora es y quién transmite","75","ÚLTIMO MINUTO","+ VER MÁS","Jorge González sorprende con lanzamiento de ocho canciones inéditas, cuatro de ellas junto a Colombina Parra","Guerra por los chips: Estas son las etapas clave del duelo tecnológico entre China y EE.UU.","Carmona dice que no intervendrá ante negativa de Jara a sumar a su hijo al comando: Candidata \"tendrá toda la autonomía\"","1","¿Qué edad tienes?","Comente","Por Andrés Oppenheimer","Por Patricio Dussaillant","TOUR INNOVACIÓN - SALUD MENTAL Y CALIDAD DE VIDA","Ingresar","Registrarse","Colegios, bancos y construcción: Sectores que cobran en UF en picada contra proyecto que la elimina","1","Proyecto que elimina UF se suma a arremetida en el TC por permisología","92","Carmona dice que no intervendrá ante negativa de Jara a sumar a su hijo","4","Jara se complica con F. Carmona: Dice que no la representa y no lo sumará a comando","371","Donald Trump es diagnosticado con insuficiencia venosa crónica tras hinchazón en sus piernas","49","Daniel \"Huevo\" Fuenzalida pone fin a controversia con Rosario Bravo: \"Está todo zanjado y solucionado\"","18","La polémica entre Daniel \"Huevo\" Fuenzalida y Rosario Bravo","158","Escala reproche a republicanos por Matthei: Diego Paulsen acusa \"campaña orquestada\"","61","Matthei acusa \"campaña asquerosa\" desde republicanos","315","Ascenso de Rodrigo Valdés en el FMI: Es nombrado como director de Asuntos Fiscales","9","Video | El exabrupto de Ossandón (RN) captado por micrófono: \"Me van a matar los diputados, pero...\"","100","Reino Unido busca rebajar a 16 años la edad para votar: ¿Cómo son las normas en otros países?","2","Israel bombardea la única parroquia católica de Gaza","222","Gendarmería y liberación de sicario: \"Hasta el minuto no tenemos indicios de corrupción\"","23","Gobierno considera \"llamativo\" que sicario estuviera acompañado","146","Jara se suma a voces que piden salida de Etcheberry: \"Está en él dar paso al costado\"","37","Vallejo: \"Lo tendrá que revisar el ministro de Hacienda\"","109","Etcheberry insiste en defensa","294","Marcel: Explicación de Etcheberry es \"plausible\"","292","Muere Felix Baumgartner, paracaidista que en 2012 saltó desde la estratósfera: Sufrió un accidente en parapente","Video: \"Kiss cam\" revela accidentalmente affair entre empresario y su directora de RR.HH. en un concierto de Coldplay","125","Marcel presenta batería de proyectos: Incluye medidas tributarias para pymes y anuncio por contribuciones","42","Congreso de Brasil aprueba polémica ley que flexibiliza concesión de licencias ambientales","4","Madre e hijo perdidos en un bosque en California son rescatados gracias a los mensajes, migas de pan y piedras que dejaron","14","Instalan \"al revés\" paradero de la locomoción colectiva en Renca: Está orientado en sentido opuesto a tránsito","145","Exsuboficial prófugo: Delpiano pide mejorar trazabilidad de efectivos que se retiran","68","Dólar cierra a la baja en medio de rumores de posible destitución del presidente de la Fed","2","Caso de estafa por terreno en Zapallar no es aislado y pone en la mira a notarías: \"Reforma no se hace cargo\"","43","Connie Francis, primera mujer solista en liderar la lista Hot 100 de Billboard, muere a los 87 años","NOTICIAS","ECONOMÍA","DEPORTES","ESPECTÁCULOS","TECNOLOGÍA","TENDENCIAS","SERVICIOS","EMOL TV","EMOL FOTOS","EMOL RESTAURANTES","EMOL AUTOS","EMOL PROPIEDADES","EMOL EMPLEOS","CONTACTOS","MAPA DEL SITIO","CLUB DE LECTORES","EMOL.COM","EL MERCURIO","BLOGS","LEGAL","CAMPO","INVERSIONES","LUN","LA SEGUNDA","SOYCHILE.CL","ECONÓMICOS.CL","ADXION","VALOR FUTURO","MERCADO MAYORISTA","Derechos de Autor","Políticas de Privacidad","Términos y Condiciones de los Servicios","Estándares de Publicidad"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>text<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"text","targets":1}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-fd69b2613aba5cf2004f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fd69b2613aba5cf2004f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"],["17:41 | Desde el poderío de Noah Lyles y Melissa Jefferson-Wooden hasta el esperado retorno de Yulimar Rojas.","Los altiplánicos quieren volver a un Mundial, algo que no logran desde 1994.","Se juega en noviembre.","No se jugará más en noviembre.","El torneo se disputará entre el 12 y el 28 de septiembre.","El futbolista se entrena por su cuenta.","El chileno podría debutar este viernes.","19:18 | Con todo, el Mandatario estadounidense evitó responder si planea imponer nuevas sanciones al país sudamericano.","18:01 | El Ejecutivo relativizó y puso en duda los cuestionamientos.","18:35 | Autoridades informaron la medida a los pobladores en una reunión hace una semana.","18:35 | Los dichos de la legisladora generaron la condena de las autoridades de Bolivia y del propio presidente Arce.","18:49 | El hecho ocurrió en el Liceo Bicentenario de la comuna.","17:03 | El episodio fue reportado este hoy y gatilló la activación del Protocolo de Seguridad.","17:36 | El trabajador perdió la vida luego del volcamiento de un cargador frontal.","17:44 | Aseguran que cumplieron con el objetivo de poner al diputado en \"el mapa político\".","16:33 | Se estableció que hubo un sistema \"reiterado\" de estafa.","13:42 | La Tesorería publicó su primer Informe Semestral.","Derechos de Autor | Políticas de Privacidad | Términos y Condiciones de los Servicios | Estándares de Publicidad"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>text<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"text","targets":1}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
